@@ -1,21 +1,22 @@
-import React, { Component } from 'react'
+// import React, { Component } from 'react'
+import React, { useState } from 'react'
 import Ingredient from './Ingredient'
 
-export default class IngredientList extends Component {
-    render() {
+const IngredientList = props => {
         // Ingredient is a child of IngredientList
-        let allIngredients = this.props.ingredients.map(mapIng => (
-            <li onClick={this.props.add}>
+        let allIngredients = props.ingredients.map(mapIng => (
+            <li onClick={props.add}>
                 <Ingredient ingredient={mapIng} />
             </li>
         ))
         return (
-            <section className="container">
+            <div className="container">
                 <h3>Ingredient List</h3>
                 <ul className="ingredientList">
                     { allIngredients }
                 </ul>
-            </section>
+            </div>
         )
-    }
 }
+
+export default IngredientList

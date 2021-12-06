@@ -1,15 +1,16 @@
 // Ingreditn is a child of IngredientList
 // gets the props of individual ingredient, color, and name
 
-import React, { Component } from 'react'
+// import React, { Component } from 'react'
+import React, { useState } from 'react'
 
-export default class Ingredient extends Component {
+const Ingredient = props => {
     
-    render() {
         return (
-            <p style={{backgroundColor: this.props.ingredient.color}} onClick={this.props.clicky}>
-                { this.props.ingredient.name }
+            <p style={{backgroundColor: props.ingredient.color}} onClick={props.clicky}>
+                { props.ingredient.name }
             </p>
         )
-    }
 }
+
+export default Ingredient
